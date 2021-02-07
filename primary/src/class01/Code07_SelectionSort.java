@@ -60,6 +60,10 @@ public class Code07_SelectionSort {
 
     }
 
+    /**
+     * 插入排序
+     * @param arr
+     */
     public static void insertSort1(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;

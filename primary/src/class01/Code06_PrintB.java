@@ -32,5 +32,9 @@ public class Code06_PrintB {
         print(a & b);
         print(a | b);
         print(a ^ b);
+
+        int c = 1023;
+        print(c);
+        print(c>>1);
     }
 }

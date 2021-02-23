@@ -7,7 +7,7 @@ import java.util.Random;
  *
  * @author zhangling 2021/2/7 17:00
  */
-public class Class02_Random {
+public class Code02_Random {
     public static void main(String[] args) {
         double random = Math.random();
 

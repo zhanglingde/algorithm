@@ -7,6 +7,7 @@ package class03;
  */
 public class Code02_BSNearLeft {
 
+    //有序数组中找到 >= num 最左的位置
     public static int mostLeftNoLessNumIndex(int[] arr, int num) {
         if (arr == null || arr.length == 0) {
             return -1;

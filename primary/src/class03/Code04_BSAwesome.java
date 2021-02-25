@@ -9,6 +9,7 @@ public class Code04_BSAwesome {
 
     public static int oneMinIndex(int[] arr) {
 
+        // 边界条件
         if (arr == null || arr.length == 0) {
             return -1;
         }
@@ -28,19 +29,19 @@ public class Code04_BSAwesome {
         int R = arr.length - 1;
         int ans = -1;
         // L...R 肯定有局部最小
-        while (L <= R) {
+        while (L < R - 1) { // L < R-1至少有三个数
             int mid = (L + R) / 2;
             if (arr[mid - 1] > arr[mid] && arr[mid] < arr[mid + 1]) {
                 ans = mid;
                 break;
             } else if (arr[mid - 1] < arr[mid]) {
-                R = mid -1;
+                R = mid - 1;
             } else {
                 L = mid + 1;
             }
 
         }
-        return ans;
+        return arr[L] < arr[R] ? L : R;
     }
 
     /**
@@ -86,23 +87,26 @@ public class Code04_BSAwesome {
 
     public static void main(String[] args) {
 
-        int maxLen = 5;
-        int maxValue = 20;
-        int testTimes = 100000;
-        // printArray(randomArray(maxLen,maxValue));
-        System.out.println("测试开始");
-        for (int i = 0; i < testTimes; i++) {
-            // int[] arr = randomArray(maxLen, maxValue);
-            // printArray(arr);
-            int[] arr = {19, 12 ,0 ,12 };
-            int ans = oneMinIndex(arr);
-            if (!check(arr, ans)) {
-                printArray(arr);
-                System.out.println(ans);
-                break;
-            }
-        }
-        System.out.println("测试结束");
+        int[] arr = {3, 2, 3, 2, 3};
+        System.out.println(oneMinIndex(arr));
+
+        //int maxLen = 5;
+        //int maxValue = 20;
+        //int testTimes = 100000;
+        //// printArray(randomArray(maxLen,maxValue));
+        //System.out.println("测试开始");
+        //for (int i = 0; i < testTimes; i++) {
+        //    //int[] arr = randomArray(maxLen, maxValue);
+        //    //printArray(arr);
+        //    //int[] arr = {19, 12, 0, 12, 8, 7, 4, 8, 9, 2, 5, 3, 7};
+        //    int ans = oneMinIndex(arr);
+        //    if (!check(arr, ans)) {
+        //        printArray(arr);
+        //        System.out.println(ans);
+        //        break;
+        //    }
+        //}
+        //System.out.println("测试结束");
     }
 
 }

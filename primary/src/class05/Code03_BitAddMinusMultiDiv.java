@@ -40,10 +40,14 @@ public class Code03_BitAddMinusMultiDiv {
         return res;
     }
 
+    // 判断负数
     public static boolean isNeg(int n) {
         return n < 0;
     }
 
+    /**
+     * a和b都不是整数最小值的情况下相除
+     */
     public static int div(int a, int b) {
         // 计算正数相除的结果
         int x = isNeg(a) ? negNum(a) : a;

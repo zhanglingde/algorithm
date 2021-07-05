@@ -5,6 +5,10 @@ package class02;
  */
 public class Code01_PreSum {
 
+    /**
+     * arr[L...R] 数组和
+     * 使用遍历的方式计算
+     */
     public static class RangeSum1 {
         private int[] arr;
 
@@ -21,11 +25,14 @@ public class Code01_PreSum {
         }
     }
 
+
     public static class RangeSum2 {
 
         private int[] preSum;
 
-
+        /**
+         * 生成前缀和数组
+         */
         public RangeSum2(int[] array) {
             int N = array.length;
             preSum = new int[N];
@@ -36,6 +43,9 @@ public class Code01_PreSum {
             }
         }
 
+        /**
+         * 计算arr[L...R] 范围上数的和
+         */
         public int rangeSum(int L, int R) {
             return L == 0 ? preSum[0] : preSum[R] - preSum[L - 1];
         }

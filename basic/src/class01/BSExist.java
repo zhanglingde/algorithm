@@ -29,12 +29,41 @@ public class BSExist {
             mid = L + ((R - L) >> 1);
             if (sortedArr[mid] == num) {
                 return true;
-            }else if(sortedArr[mid] > num){
-                R = mid -1;
-            }else{
-                L = mid +1;
+            } else if (sortedArr[mid] > num) {
+                R = mid - 1;
+            } else {
+                L = mid + 1;
             }
         }
         return sortedArr[L] == num;
+    }
+
+    // 找到最右侧 <= num 的数
+    public static int mostRightLessNumIndex(int[] arr, int num) {
+        if (arr == null && arr.length == 0) {
+            return -1;
+        }
+        int L = 0;
+        int R = arr.length - 1;
+        int ans = -1;        // 〈= num 的数最右位置索引
+        while (L <= R) {
+            int mid = L + (R - L) / 2;
+
+            if (arr[mid] <= num) {   // 查找右侧是否还有 <= num 的数
+                ans = mid;
+                L = mid + 1;
+            } else if (arr[mid] > num) {
+                R = mid - 1;
+            }
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1,1,2,2,3,3,3,3,4,4,4,5,5,5,5,6,6,6,7,8,9};
+        int index = mostRightLessNumIndex(arr, 3);
+        System.out.println("index = " + index);
+
+
     }
 }

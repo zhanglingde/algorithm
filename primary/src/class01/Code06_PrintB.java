@@ -36,5 +36,28 @@ public class Code06_PrintB {
         int c = 1023;
         print(c);
         print(c>>1);
+        print(c>>>1);
+
+        int d = -1023;
+        print(d);
+        print(d>>1);
+        print(d>>>1);
+
+        System.out.println("================");
+
+        System.out.println("Integer.MIN_VALUE = " + Integer.MIN_VALUE);
+        System.out.println("~Integer.MIN_VALUE = " + ~Integer.MIN_VALUE);
+        System.out.println("~Integer.MIN_VALUE + 1 = " + (~Integer.MIN_VALUE + 1));
+        print(Integer.MIN_VALUE);
+        print(~Integer.MIN_VALUE);
+        print((~Integer.MIN_VALUE + 1));
+
+        System.out.println("===================");
+
+        print(c);
+        print(c<<2);
+        print(d);
+        print(d<<2);
+
     }
 }

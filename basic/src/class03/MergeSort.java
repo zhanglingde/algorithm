@@ -10,11 +10,39 @@ import java.util.Arrays;
  */
 public class MergeSort {
 
+    // 使用递归实现
     public static void mergeSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
         process(arr, 0, arr.length - 1);
+    }
+
+    // 使用非递归实现
+    public static void mergeSort2(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        int mergeSize = 1;
+        int N = arr.length;
+        while (mergeSize < N) {
+            int L = 0; // 当前左组的第一个位置
+            while (L < N) {
+                if (N - L <= mergeSize) {  // 右组没有数了,不需要合并，左组已经是有序的
+                    break;
+                }
+                int M = L + mergeSize - 1;
+                int R = M + Math.min(mergeSize, N - M - 1);
+                merge(arr, L, M, R);
+                L = R + 1;
+            }
+            // 防止溢出
+            if (mergeSize > N / 2) {
+                break;
+            }
+            // mergeSize * 2
+            mergeSize <<= 1;
+        }
     }
 
     public static void process(int[] arr, int L, int R) {
@@ -44,19 +72,23 @@ public class MergeSort {
         }
 
         for (i = 0; i < help.length; i++) {
-            arr[L + i] = help[i++];
+            arr[L + i] = help[i];
         }
 
     }
 
     public static void main(String[] args) {
+        //int[] array = {71, 11, 46, 15, 53, 69, 16, 98, 91, 90};
+        //mergeSort2(array);
         int testTimes = 100000;
         for (int i = 0; i < testTimes; i++) {
             int[] arr = generateRandomArray(100, 20);
             int[] clone = arr.clone();
-            mergeSort(arr);
+            int[] arrs = arr.clone();
+            mergeSort2(arr);
             Arrays.sort(clone);
             if (!isEqual(arr, clone)) {
+                printArray(arrs);
                 System.out.println("error...");
                 break;
             }

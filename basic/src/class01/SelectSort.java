@@ -1,48 +1,44 @@
-package class05;
+package class01;
 
 import java.util.Arrays;
 
 /**
- * 计数排序
- * @author zhangling 2021/7/13 10:40
+ * 选择排序
  */
-public class Code03_CountSort {
+public class SelectSort {
 
-    // 计数排序
-    public static void countSort(int[] arr) {
+    public static void selectSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
-        // 找到数组中的最大数max，设置max个桶，以元素作下标，计算每个元素出现的次数
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            max = Math.max(max, arr[i]);
-        }
-        int[] bucket = new int[max + 1];
-        // 计算元素出现的次数, bucket 下标为元素，数组值为元素出现的次数
-        for (int i = 0; i < arr.length; i++) {
-            bucket[arr[i]]++;
-        }
-        int i = 0;
-        for (int j = 0; j < bucket.length; j++) {
-            while (bucket[j]-- > 0) {
-                arr[i++] = j;
+        int N = arr.length;
+        for (int i = 0; i < N; i++) {
+            int minNumIndex = i;
+            for (int j = i + 1; j < N; j++) {
+                minNumIndex = arr[minNumIndex] > arr[j] ? j : minNumIndex;
             }
+            swap(arr, minNumIndex, i);
         }
+    }
+
+    public static void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 
     public static void main(String[] args) {
         int testTimes = 500000;
         for (int i = 0; i < testTimes; i++) {
-            int[] arr1 = generateRandomArray(100, 50);
+            int[] arr1 = generateRandomArray(100, 100);
             int[] arr2 = arr1.clone();
-            countSort(arr1);
+            selectSort(arr1);
             Arrays.sort(arr2);
             if (!isEqual(arr1, arr2)) {
                 System.out.println("error...");
-                break;
             }
         }
+
         System.out.println("end...");
     }
 
@@ -54,10 +50,6 @@ public class Code03_CountSort {
         return arr;
     }
 
-    /**
-     * 判断两个数组是否相等
-     * @return true 相等
-     */
     public static boolean isEqual(int[] arr1, int[] arr2) {
         if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
             return false;
@@ -72,7 +64,15 @@ public class Code03_CountSort {
             if (arr1[i] != arr2[i]) {
                 return false;
             }
+
         }
         return true;
+    }
+
+    private static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
 }

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.io.InputStream</OriginalElement>
+  <nodes>
+    <node x="3330.475393393279" y="1022.5094744596001">java.util.zip.ZipOutputStream</node>
+    <node x="4632.119364538089" y="227.65536335695606">java.io.DataInputStream</node>
+    <node x="4409.9877381315255" y="444.3922629480049">java.io.RandomAccessFile</node>
+    <node x="3421.1038761462064" y="355.67123879194304">java.util.zip.GZIPInputStream</node>
+    <node x="2799.611199166857" y="223.1655363356956">java.util.zip.CheckedInputStream</node>
+    <node x="2547.8656642917013" y="223.1655363356956">java.io.BufferedInputStream</node>
+    <node x="3671.507391602531" y="355.67123879194304">java.util.zip.ZipInputStream</node>
+    <node x="2985.8716817165805" y="696.0649622799667">java.io.ByteArrayOutputStream</node>
+    <node x="4442.016777794714" y="615.9321801417358">java.io.ObjectOutput</node>
+    <node x="3528.944277540705" y="227.65536335695606">java.util.zip.InflaterInputStream</node>
+    <node x="4368.825592788743" y="227.65536335695606">java.io.PushbackInputStream</node>
+    <node x="4709.439073255609" y="47.85712108511774">java.io.ObjectInputStream</node>
+    <node x="4425.624191622852" y="47.85712108511774">java.io.StringBufferInputStream</node>
+    <node x="4052.531821039397" y="227.65536335695606">javax.swing.ProgressMonitorInputStream</node>
+    <node x="3445.4340442353136" y="891.1851837740357">java.util.zip.DeflaterOutputStream</node>
+    <node x="2395.925461975158" y="891.1851837740357">java.io.BufferedOutputStream</node>
+    <node x="3053.356734042013" y="223.1655363356956">javax.crypto.CipherInputStream</node>
+    <node x="3771.238049290051" y="227.65536335695606">java.io.LineNumberInputStream</node>
+    <node x="3929.9944283573373" y="47.85712108511774">java.io.FilterInputStream</node>
+    <node x="3213.549783459066" y="47.85712108511774">java.io.ByteArrayInputStream</node>
+    <node x="3885.2200617871927" y="885.5480073154008">java.io.DataOutputStream</node>
+    <node x="3696.17954672458" y="47.85712108511774">java.io.PipedInputStream</node>
+    <node x="3672.007391602531" y="427.0137163758289">java.util.jar.JarInputStream</node>
+    <node x="2979.734901826309" y="46.17231832152203">javax.sound.sampled.AudioInputStream</node>
+    <node x="4082.8698274657736" y="696.0649622799667">java.io.ObjectOutputStream</node>
+    <node x="2963.943578704057" y="891.1851837740357">javax.crypto.CipherOutputStream</node>
+    <node x="3330.975393393279" y="1102.5094744596001">java.util.jar.JarOutputStream</node>
+    <node x="3476.4340442353136" y="506.5819172445326">java.io.OutputStream</node>
+    <node x="3705.327053011253" y="885.5480073154008">java.io.PrintStream</node>
+    <node x="4785.720459308085" y="517.0477787091365">java.io.DataOutput</node>
+    <node x="4158.809309990094" y="47.85712108511774">java.io.SequenceInputStream</node>
+    <node x="3246.402862975947" y="696.0649622799667">java.io.FileOutputStream</node>
+    <node x="3456.9340442353136" y="696.0649622799667">java.io.FilterOutputStream</node>
+    <node x="3726.2684377301953" y="696.0649622799667">java.io.PipedOutputStream</node>
+    <node x="3479.364665091823" y="47.85712108511774">java.io.FileInputStream</node>
+    <node x="3208.1682986613832" y="885.5480073154008">java.security.DigestOutputStream</node>
+    <node x="2670.3138703675486" y="891.1851837740357">java.util.zip.CheckedOutputStream</node>
+    <node x="4785.720459308085" y="364.32213162640664">java.io.DataInput</node>
+    <node x="3291.650505791359" y="223.1655363356956">java.security.DigestInputStream</node>
+    <node x="3602.965220414539" y="1022.5094744596001">java.util.zip.GZIPOutputStream</node>
+    <node x="4899.285510490488" y="213.2290380756433">java.io.ObjectInput</node>
+    <node x="3691.635703535777" y="-90.28575782976452">java.io.InputStream</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.io.ObjectOutputStream" target="java.io.ObjectOutput" relationship="REALIZATION">
+      <point x="106.02900473723048" y="-1.2857578297646342" />
+      <point x="4521.516777794714" y="709.7792044502021" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.zip.DeflaterOutputStream" target="java.io.FilterOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="3557.9340442353136" y="811.2872183697837" />
+      <point x="3557.934271508041" y="811.2872183697837" />
+      <point x="2.27272727329364E-4" y="15.0" />
+    </edge>
+    <edge source="java.util.zip.GZIPOutputStream" target="java.util.zip.DeflaterOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="3703.465220414539" y="996.5094744596001" />
+      <point x="3557.9340442353136" y="996.5094744596001" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.DataOutputStream" target="java.io.DataOutput" relationship="REALIZATION">
+      <point x="23.25" y="-15.0" />
+      <point x="4007.9700617871927" y="817.2872183697837" />
+      <point x="4857.220459308085" y="817.2872183697837" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.PushbackInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272698830348E-4" y="-15.0" />
+      <point x="4481.32582006147" y="149.0" />
+      <point x="4023.9946556300642" y="149.0" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="java.util.zip.CheckedInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272698830348E-4" y="-15.0" />
+      <point x="2908.111426439584" y="149.0" />
+      <point x="4023.9946556300642" y="149.0" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="java.io.PipedOutputStream" target="java.io.OutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="15.0" />
+      <point x="3829.7684377301953" y="616.3234397622497" />
+      <point x="3557.9340442353136" y="616.3234397622497" />
+      <point x="3557.9340442353136" y="564.173778861541" />
+      <point x="3557.949697096702" y="564.173778861541" />
+      <point x="0.015652861388389283" y="2.464858137113083" />
+    </edge>
+    <edge source="javax.swing.ProgressMonitorInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272698830348E-4" y="-15.0" />
+      <point x="4191.532048312124" y="149.0" />
+      <point x="4023.9946556300642" y="149.0" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="java.util.zip.InflaterInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272698830348E-4" y="-15.0" />
+      <point x="3630.944504813432" y="149.0" />
+      <point x="4023.9946556300642" y="149.0" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="java.io.RandomAccessFile" target="java.io.DataOutput" relationship="REALIZATION">
+      <point x="91.89049093195081" y="-0.2264218039575212" />
+      <point x="4674.966699687571" y="459.16584114404736" />
+      <point x="4674.966699687571" y="459.3922629480049" />
+      <point x="4724.619364538089" y="459.3922629480049" />
+      <point x="4724.619364538089" y="539.5477787091365" />
+      <point x="4812.794134026772" y="539.5477787091365" />
+      <point x="4812.794134026772" y="543.2977787091365" />
+      <point x="4857.220459308085" y="543.2977787091365" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.BufferedOutputStream" target="java.io.FilterOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="2510.925461975158" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.4436612563187" />
+      <point x="3557.679889570476" y="811.4436612563187" />
+      <point x="-0.2541546648376425" y="1.2765119764279689" />
+    </edge>
+    <edge source="java.io.DataInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272744305083E-4" y="-15.0" />
+      <point x="4724.619591810817" y="149.0" />
+      <point x="4023.9946556300642" y="149.0" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="java.io.FileOutputStream" target="java.io.OutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="15.0" />
+      <point x="3341.402862975947" y="616.3234397622497" />
+      <point x="3557.9340442353136" y="616.3234397622497" />
+      <point x="3557.9340442353136" y="587.6611420152913" />
+      <point x="3557.949697096702" y="587.6611420152913" />
+      <point x="0.015652861388389283" y="12.496609007086931" />
+    </edge>
+    <edge source="java.io.DataInputStream" target="java.io.DataInput" relationship="REALIZATION">
+      <point x="0.17039390129230014" y="6.997840940841684" />
+      <point x="4724.789758439381" y="290.1610658132033" />
+      <point x="4829.720459308085" y="290.1610658132033" />
+      <point x="-20.5" y="15.0" />
+    </edge>
+    <edge source="java.util.zip.CheckedOutputStream" target="java.io.FilterOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="2785.8138703675486" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.4436612563187" />
+      <point x="3557.934271508041" y="811.4436612563187" />
+      <point x="2.27272727329364E-4" y="15.0" />
+    </edge>
+    <edge source="java.security.DigestInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272744305083E-4" y="-15.0" />
+      <point x="3391.1507330640866" y="149.0" />
+      <point x="4023.9946556300642" y="149.0" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="java.util.zip.ZipOutputStream" target="java.util.zip.DeflaterOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="3424.475393393279" y="996.5094744596001" />
+      <point x="3557.9340442353136" y="996.5094744596001" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.security.DigestOutputStream" target="java.io.FilterOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="3314.6682986613832" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.4436612563187" />
+      <point x="3557.934271508041" y="811.4436612563187" />
+      <point x="2.27272727329364E-4" y="15.0" />
+    </edge>
+    <edge source="java.io.PrintStream" target="java.io.FilterOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="3777.827053011253" y="811.2872183697837" />
+      <point x="3557.9340442353136" y="811.2872183697837" />
+      <point x="3557.9340442353136" y="763.2905331606088" />
+      <point x="3557.934271508041" y="763.2905331606088" />
+      <point x="2.27272727329364E-4" y="15.0" />
+    </edge>
+    <edge source="java.util.zip.ZipInputStream" target="java.util.zip.InflaterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272698830348E-4" y="-15.0" />
+      <point x="3721.9088974827914" y="355.67123879194304" />
+      <point x="3721.9088974827914" y="362.83677512763865" />
+      <point x="3755.641177068252" y="362.83677512763865" />
+      <point x="3755.641177068252" y="299.4501384337932" />
+      <point x="3630.944504813432" y="299.4501384337932" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="java.io.ByteArrayInputStream" target="java.io.InputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="15.0" />
+      <point x="3326.049783459066" y="6.319667758896571" />
+      <point x="3789.819930808504" y="6.319667758896571" />
+      <point x="24.184227272727185" y="15.0" />
+    </edge>
+    <edge source="java.io.ObjectInputStream" target="java.io.InputStream" relationship="GENERALIZATION">
+      <point x="2.2727272698830348E-4" y="15.0" />
+      <point x="4809.439300528336" y="6.319667758896571" />
+      <point x="3789.819930808504" y="6.319667758896571" />
+      <point x="24.184227272727185" y="15.0" />
+    </edge>
+    <edge source="java.io.RandomAccessFile" target="java.io.DataInput" relationship="REALIZATION">
+      <point x="97.62292000050729" y="1.2066854631816" />
+      <point x="4643.438339810511" y="460.5989484111865" />
+      <point x="4643.438339810511" y="459.3922629480049" />
+      <point x="4702.894574411339" y="459.3922629480049" />
+      <point x="4702.894574411339" y="379.32213162640664" />
+      <point x="4829.720459308085" y="379.32213162640664" />
+      <point x="-20.5" y="15.0" />
+    </edge>
+    <edge source="java.io.PipedInputStream" target="java.io.InputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="15.0" />
+      <point x="3792.67954672458" y="6.319667758896571" />
+      <point x="3789.819930808504" y="6.319667758896571" />
+      <point x="24.184227272727185" y="15.0" />
+    </edge>
+    <edge source="java.util.jar.JarOutputStream" target="java.util.zip.ZipOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.FilterInputStream" target="java.io.InputStream" relationship="GENERALIZATION">
+      <point x="-1.6605870100838729" y="-13.686809418578093" />
+      <point x="4022.3338413472534" y="6.319667758896571" />
+      <point x="3789.819930808504" y="6.319667758896571" />
+      <point x="24.184227272727185" y="15.0" />
+    </edge>
+    <edge source="java.io.FileInputStream" target="java.io.InputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="15.0" />
+      <point x="3567.364665091823" y="6.319667758896571" />
+      <point x="3789.819930808504" y="6.319667758896571" />
+      <point x="24.184227272727185" y="15.0" />
+    </edge>
+    <edge source="java.io.FilterOutputStream" target="java.io.OutputStream" relationship="GENERALIZATION">
+      <point x="85.73228136350917" y="-13.054560694963243" />
+      <point x="3557.9340442353136" y="698.0104015850035" />
+      <point x="3557.9340442353136" y="530.3368513297266" />
+      <point x="19.04493986385205" y="8.754934085194009" />
+    </edge>
+    <edge source="java.io.ObjectInput" target="java.io.DataInput" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="4971.785510490488" y="290.1610658132033" />
+      <point x="4865.234270619015" y="290.1610658132033" />
+      <point x="15.013811310929668" y="-7.854809621783716" />
+    </edge>
+    <edge source="java.io.ObjectOutput" target="java.io.DataOutput" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.5440127384481457" y="-5.9136884350630226" />
+      <point x="4522.060790533162" y="586.5058548604231" />
+      <point x="4829.470459308085" y="586.5058548604231" />
+      <point x="-27.75" y="15.0" />
+    </edge>
+    <edge source="java.io.ObjectOutputStream" target="java.io.OutputStream" relationship="GENERALIZATION">
+      <point x="1.3636363610203261E-4" y="-15.0" />
+      <point x="4190.369963829409" y="616.3234397622497" />
+      <point x="3557.9340442353136" y="616.3234397622497" />
+      <point x="3557.9340442353136" y="526.0375295283093" />
+      <point x="9.01318899387843" y="4.455612283776645" />
+    </edge>
+    <edge source="java.util.jar.JarInputStream" target="java.util.zip.ZipInputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="3758.507391602531" y="374.0975640732558" />
+      <point x="3758.507391602531" y="374.0975640732558" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="javax.sound.sampled.AudioInputStream" target="java.io.InputStream" relationship="GENERALIZATION">
+      <point x="1.3636363610203261E-4" y="15.0" />
+      <point x="3076.235038189945" y="6.319667758896571" />
+      <point x="3789.819930808504" y="6.319667758896571" />
+      <point x="24.184227272727185" y="15.0" />
+    </edge>
+    <edge source="java.io.LineNumberInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272744305083E-4" y="-15.0" />
+      <point x="3892.7382765627785" y="149.0" />
+      <point x="4023.9946556300642" y="149.0" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="javax.crypto.CipherInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272744305083E-4" y="-15.0" />
+      <point x="3153.3569613147406" y="149.0" />
+      <point x="4023.9946556300642" y="149.0" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="java.io.ByteArrayOutputStream" target="java.io.OutputStream" relationship="GENERALIZATION">
+      <point x="2.27272727329364E-4" y="15.0" />
+      <point x="3105.871908989308" y="616.3234397622497" />
+      <point x="3557.9340442353136" y="616.3234397622497" />
+      <point x="3557.9340442353136" y="521.5819172445326" />
+      <point x="-81.49977272727278" y="0.0" />
+    </edge>
+    <edge source="java.util.zip.GZIPInputStream" target="java.util.zip.InflaterInputStream" relationship="GENERALIZATION">
+      <point x="-4.5454545215761755E-5" y="-15.0" />
+      <point x="3514.603830691661" y="299.4501384337932" />
+      <point x="3630.944504813432" y="299.4501384337932" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+    <edge source="java.io.StringBufferInputStream" target="java.io.InputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="15.0" />
+      <point x="4547.124191622852" y="6.319667758896571" />
+      <point x="3789.819930808504" y="6.319667758896571" />
+      <point x="24.184227272727185" y="15.0" />
+    </edge>
+    <edge source="javax.crypto.CipherOutputStream" target="java.io.FilterOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="3070.943578704057" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.4436612563187" />
+      <point x="3557.934271508041" y="811.4436612563187" />
+      <point x="2.27272727329364E-4" y="15.0" />
+    </edge>
+    <edge source="java.io.DataOutputStream" target="java.io.FilterOutputStream" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="3984.7200617871927" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.2872183697837" />
+      <point x="3440.4192483299057" y="811.4436612563187" />
+      <point x="3557.679889570476" y="811.4436612563187" />
+      <point x="-0.2541546648376425" y="4.142726510706211" />
+    </edge>
+    <edge source="java.io.SequenceInputStream" target="java.io.InputStream" relationship="GENERALIZATION">
+      <point x="2.2727272698830348E-4" y="15.0" />
+      <point x="4271.809537262821" y="6.319667758896571" />
+      <point x="3789.819930808504" y="6.319667758896571" />
+      <point x="24.184227272727185" y="15.0" />
+    </edge>
+    <edge source="java.io.ObjectInputStream" target="java.io.ObjectInput" relationship="REALIZATION">
+      <point x="-14.999772727273012" y="15.0" />
+      <point x="4794.439300528336" y="141.11791003073486" />
+      <point x="4971.785510490488" y="141.11791003073486" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.io.BufferedInputStream" target="java.io.FilterInputStream" relationship="GENERALIZATION">
+      <point x="2.2727272698830348E-4" y="-15.0" />
+      <point x="2655.3658915644282" y="149.0" />
+      <point x="4023.9946556300642" y="149.0" />
+      <point x="2.2727272698830348E-4" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6977844735909252" showDependencies="false" x="3219.7419797302446" y="724.4764154537834" />
+  <SelectedNodes>
+    <node>java.util.zip.ZipOutputStream</node>
+    <node>java.io.PrintStream</node>
+    <node>java.security.DigestOutputStream</node>
+    <node>java.io.DataOutputStream</node>
+    <node>java.util.zip.CheckedOutputStream</node>
+    <node>java.util.zip.GZIPOutputStream</node>
+    <node>javax.crypto.CipherOutputStream</node>
+    <node>java.util.zip.DeflaterOutputStream</node>
+    <node>java.util.jar.JarOutputStream</node>
+    <node>java.io.BufferedOutputStream</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

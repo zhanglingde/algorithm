@@ -1,4 +1,4 @@
-package class05;
+package basic.class04;
 
 import java.util.Arrays;
 import java.util.LinkedList;

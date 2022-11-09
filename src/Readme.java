@@ -47,4 +47,16 @@ public class Readme {
      *
      */
     void binaryTree(){}
+
+    /**
+     * 并查集 {@link basic.class16.Code05_UnionFind}
+     */
+    void union(){}
+
+
+    /**
+     * 图 {@link basic.class17.Graph}
+     * DFS、BFS、拓扑排序、最小生成树 Kruskal、Prim
+     */
+    void graph(){}
 }

@@ -12,6 +12,7 @@ public class Code01_MinPathSum {
 		int row = m.length;
 		int col = m[0].length;
 		int[][] dp = new int[row][col];
+        // 填充第 0 行的值
 		dp[0][0] = m[0][0];
 		for (int i = 1; i < row; i++) {
 			dp[i][0] = dp[i - 1][0] + m[i][0];
@@ -27,6 +28,14 @@ public class Code01_MinPathSum {
 		return dp[row - 1][col - 1];
 	}
 
+    /**
+     * 动态规划，用一个数组，空间压缩；
+     *
+     * 下面一行依赖上面一行，所以可以覆盖写表
+     *
+     * @param m
+     * @return
+     */
 	public static int minPathSum2(int[][] m) {
 		if (m == null || m.length == 0 || m[0] == null || m[0].length == 0) {
 			return 0;
@@ -34,10 +43,12 @@ public class Code01_MinPathSum {
 		int row = m.length;
 		int col = m[0].length;
 		int[] dp = new int[col];
+        // 填充第 0 行的值
 		dp[0] = m[0][0];
 		for (int j = 1; j < col; j++) {
 			dp[j] = dp[j - 1] + m[0][j];
 		}
+
 		for (int i = 1; i < row; i++) {
 			dp[0] += m[i][0];
 			for (int j = 1; j < col; j++) {

@@ -6,7 +6,9 @@ import java.util.Map;
 public class Code04_CoinsWaySameValueSamePapper {
 
 	public static class Info {
+        // 面值数组
 		public int[] coins;
+        // 张数数组
 		public int[] zhangs;
 
 		public Info(int[] c, int[] z) {
@@ -95,6 +97,7 @@ public class Code04_CoinsWaySameValueSamePapper {
 					dp[index][rest] += dp[index][rest - coins[index]];
 				}
 				if (rest - coins[index] * (zhangs[index] + 1) >= 0) {
+                    // rest - coins[index] * (zhangs[index] + 1) 该值还未越界，则该值表示的就是甲的位置
 					dp[index][rest] -= dp[index + 1][rest - coins[index] * (zhangs[index] + 1)];
 				}
 			}

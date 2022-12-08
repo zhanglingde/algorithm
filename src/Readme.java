@@ -101,4 +101,36 @@ public class Readme {
      * </ol>
      */
     void test(){}
+
+    /**
+     * 滑动窗口
+     * {@link basic.class25.Code01_SlidingWindowMaxArray}
+     *
+     */
+    void slidingWindow(){}
+
+    /**
+     * 单调栈
+     */
+    void monotonousStack(){}
+
+    /**
+     * KMP 算法
+     *
+     * {@link basic.class28.Code01_KMP}
+     */
+    void kmp(){}
+
+    /**
+     * manacher 算法
+     * <ol>
+     *     <li> {@link basic.class29.Code01_Manacher} </li>
+     * </ol>
+     */
+    void manacher(){}
+
+    /**
+     * bfprt 算法，蓄水池算法
+     */
+    void bfprt(){}
 }

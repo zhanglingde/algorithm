@@ -133,4 +133,14 @@ public class Readme {
      * bfprt 算法，蓄水池算法
      */
     void bfprt(){}
+
+    /**
+     * Morris 遍历  {@link basic.class31.Code01_MorrisTraversal}
+     */
+    void morris(){}
+
+    /**
+     * 线段树 {@link basic.class32.Code01_SegmentTree}
+     */
+    void segmentTree(){}
 }

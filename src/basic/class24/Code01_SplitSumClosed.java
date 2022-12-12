@@ -1,5 +1,8 @@
 package basic.class24;
 
+/**
+ * 改背包问题
+ */
 public class Code01_SplitSumClosed {
 
 	public static int right(int[] arr) {
@@ -10,6 +13,7 @@ public class Code01_SplitSumClosed {
 		for (int num : arr) {
 			sum += num;
 		}
+		// 超过一半就是较大的那个集合，不关心该情况
 		return process(arr, 0, sum / 2);
 	}
 

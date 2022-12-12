@@ -20,6 +20,7 @@ public class Code02_SplitSumClosedSizeHalf {
 	// arr[i....]自由选择，挑选的个数一定要是picks个，累加和<=rest, 离rest最近的返回
 	public static int process(int[] arr, int i, int picks, int rest) {
 		if (i == arr.length) {
+			// 返回 -1 表示没有选满 picks 个个数
 			return picks == 0 ? 0 : -1;
 		} else {
 			int p1 = process(arr, i + 1, picks, rest);
@@ -46,6 +47,7 @@ public class Code02_SplitSumClosedSizeHalf {
 		}
 		sum /= 2;
 		int N = arr.length;
+		// 向上取整
 		int M = (N + 1) / 2;
 		int[][][] dp = new int[N + 1][M + 1][sum + 1];
 		for (int i = 0; i <= N; i++) {

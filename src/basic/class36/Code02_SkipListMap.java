@@ -1,4 +1,4 @@
-package basic.class37;
+package basic.class36;
 
 import java.util.ArrayList;
 

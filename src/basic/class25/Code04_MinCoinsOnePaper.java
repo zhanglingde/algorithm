@@ -1,5 +1,9 @@
 package basic.class25;
 
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.LinkedList;
+
 public class Code04_MinCoinsOnePaper {
 
 	public static int minCoins(int[] arr, int aim) {

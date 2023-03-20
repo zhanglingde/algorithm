@@ -43,7 +43,7 @@ public class Code05_LowestLexicography {
 		return ans.size() == 0 ? "" : ans.first();
 	}
 
-	// strs中所有字符串全排列，返回所有可能的结果
+	// strs 中所有字符串全排列，返回所有可能的结果
 	public static TreeSet<String> process(String[] strs) {
 		TreeSet<String> ans = new TreeSet<>();
 		if (strs.length == 0) {

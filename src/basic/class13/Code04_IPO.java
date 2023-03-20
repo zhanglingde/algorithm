@@ -14,26 +14,34 @@ import java.util.PriorityQueue;
  */
 public class Code04_IPO {
 
-	// 最多K个项目
-	// W是初始资金
-	// Profits[] Capital[] 一定等长
-	// 返回最终最大的资金
-	public static int findMaximizedCapital(int K, int W, int[] Profits, int[] Capital) {
+    /**
+     *
+     * @param K 最多做 K 个项目
+     * @param M 初始资金
+     * @param Profits 两个数组等长
+     * @param Capital
+     * @return 返回最终最大的资金
+     */
+	public static int findMaximizedCapital(int K, int M, int[] Profits, int[] Capital) {
+        // 1. 花费从小到大排序，利润从大到小排序，两个数组等长
 		PriorityQueue<Program> minCostQ = new PriorityQueue<>(new MinCostComparator());
 		PriorityQueue<Program> maxProfitQ = new PriorityQueue<>(new MaxProfitComparator());
 		for (int i = 0; i < Profits.length; i++) {
 			minCostQ.add(new Program(Profits[i], Capital[i]));
 		}
+        // k 个项目
 		for (int i = 0; i < K; i++) {
-			while (!minCostQ.isEmpty() && minCostQ.peek().c <= W) {
+            // 2. 小根堆中能做的项目，进入大根堆按利润排序
+			while (!minCostQ.isEmpty() && minCostQ.peek().c <= M) {
 				maxProfitQ.add(minCostQ.poll());
 			}
+            // 3. 大根堆中能做的项目，利润加起来
 			if (maxProfitQ.isEmpty()) {
-				return W;
+				return M;
 			}
-			W += maxProfitQ.poll().p;
+			M += maxProfitQ.poll().p;
 		}
-		return W;
+		return M;
 	}
 
 	public static class Program {
@@ -46,22 +54,19 @@ public class Code04_IPO {
 		}
 	}
 
+    // 花费从小到大排序
 	public static class MinCostComparator implements Comparator<Program> {
-
 		@Override
 		public int compare(Program o1, Program o2) {
 			return o1.c - o2.c;
 		}
-
 	}
 
+    // 利润从大到小排序
 	public static class MaxProfitComparator implements Comparator<Program> {
-
 		@Override
 		public int compare(Program o1, Program o2) {
 			return o2.p - o1.p;
 		}
-
 	}
-
 }

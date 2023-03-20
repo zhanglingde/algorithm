@@ -29,12 +29,15 @@ public class Code03_BestArrange {
 		return process(programs, 0, 0);
 	}
 
-	// 还剩下的会议都放在programs里
-	// done之前已经安排了多少会议的数量
-	// timeLine目前来到的时间点是什么
-	
-	// 目前来到timeLine的时间点，已经安排了done多的会议，剩下的会议programs可以自由安排
-	// 返回能安排的最多会议数量
+
+    /**
+     * 目前来到 timeLine 的时间点，已经安排了 done 数量的会议，剩下的会议 programs 可以自由安排
+     *
+     * @param programs 未安排的会议
+     * @param done 之前已经安排了多少次会议
+     * @param timeLine 目前来到的时间点
+     * @return 返回能安排的最多会议数量
+     */
 	public static int process(Program[] programs, int done, int timeLine) {
 		if (programs.length == 0) {
 			return done;
@@ -62,8 +65,9 @@ public class Code03_BestArrange {
 		return ans;
 	}
 
-	// 会议的开始时间和结束时间，都是数值，不会 < 0
+	// 贪心算法：会议的开始时间和结束时间，都是数值，不会 < 0
 	public static int bestArrange2(Program[] programs) {
+        // 先按结束时间排序
 		Arrays.sort(programs, new ProgramComparator());
 		int timeLine = 0;
 		int result = 0;

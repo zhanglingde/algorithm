@@ -5,14 +5,24 @@ package basic.class21;
  */
 public class Code02_HorseJump {
 
-	// 当前来到的位置是（x,y）
-	// 还剩下rest步需要跳
-	// 跳完rest步，正好跳到a，b的方法数是多少？
-	// 10 * 9
+    /**
+     *
+     * @param a
+     * @param b 目的地坐标
+     * @param k 必须走 k 步
+     * @return
+     */
 	public static int jump(int a, int b, int k) {
 		return process(0, 0, k, a, b);
 	}
 
+    /**
+     * 从 x,y 到 a,b 共有 rest 有多少种走法
+     * @param (x,y) 出发点
+     * @param rest 还剩几步
+     * @param (a,b) 目的地
+     * @return 有多少种走法
+     */
 	public static int process(int x, int y, int rest, int a, int b) {
 		if (x < 0 || x > 9 || y < 0 || y > 8) {
 			return 0;
@@ -31,6 +41,7 @@ public class Code02_HorseJump {
 		return ways;
 	}
 
+    // 动态规划
 	public static int dp(int a, int b, int k) {
 		int[][][] dp = new int[10][9][k + 1];
 		dp[a][b][0] = 1;

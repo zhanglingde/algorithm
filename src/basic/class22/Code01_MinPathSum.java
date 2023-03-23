@@ -17,9 +17,11 @@ public class Code01_MinPathSum {
         for (int i = 1; i < row; i++) {
             dp[i][0] = dp[i - 1][0] + m[i][0];
         }
+        // 填充第 0 列的值
         for (int j = 1; j < col; j++) {
             dp[0][j] = dp[0][j - 1] + m[0][j];
         }
+        // 填充其他位置的值，位置依赖左、上、左上，经过上面数据填充后，动态规划表可以自我更新
         for (int i = 1; i < row; i++) {
             for (int j = 1; j < col; j++) {
                 dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + m[i][j];

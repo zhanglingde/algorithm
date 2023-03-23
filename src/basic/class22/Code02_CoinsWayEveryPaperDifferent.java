@@ -17,7 +17,13 @@ public class Code02_CoinsWayEveryPaperDifferent {
         return process(arr, 0, aim);
     }
 
-    // arr[index....] 组成正好rest这么多的钱，有几种方法
+    /**
+     * arr[index....] 组成正好rest这么多的钱，有几种方法
+     * @param arr 数组
+     * @param index 数组 index 位置
+     * @param rest 还剩多少面值需要从 arr 数组中获取
+     * @return 返回有多少种组合方法
+     */
     public static int process(int[] arr, int index, int rest) {
         if (rest < 0) {
             return 0;
@@ -25,6 +31,7 @@ public class Code02_CoinsWayEveryPaperDifferent {
         if (index == arr.length) { // 没钱了！
             return rest == 0 ? 1 : 0;
         } else {
+            // 要 index 位置和不要 index 位置
             return process(arr, index + 1, rest) + process(arr, index + 1, rest - arr[index]);
         }
     }

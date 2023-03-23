@@ -8,10 +8,10 @@ import java.util.Map;
 // 有效的括号
 public class Code20_Invalid {
     public static boolean isValid(String str) {
-        if(str == null || str.length() < 2){
+        if (str == null || str.length() < 2) {
             return false;
         }
-        while (str.contains("()") || str.contains("[]")|| str.contains("{}")) {
+        while (str.contains("()") || str.contains("[]") || str.contains("{}")) {
 
             if (str.contains("()")) {
                 str = str.replace("()", "");
@@ -47,7 +47,7 @@ public class Code20_Invalid {
                     return false;
                 }
                 stack.pop();
-            }else {
+            } else {
                 // 左半部分符号入栈
                 stack.push(c);
             }

@@ -13,7 +13,7 @@ public class GraphGenerator {
      * [ 3 , 0,  1]
      *
      * N*3 的矩阵
-     * [weight, from节点上面的值，to节点上面的值]
+     * [weight, from 节点上面的值，to 节点上面的值]
      *
      * @param matrix 所有的边
      * @return

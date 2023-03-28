@@ -1,9 +1,8 @@
-package basic.class11;
+package basic.class11_binaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
-import java.util.concurrent.locks.StampedLock;
 
 /**
  * 二叉树可以通过 先序、后序和按层遍历的方式序列化

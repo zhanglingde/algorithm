@@ -1,4 +1,4 @@
-package basic.class11;
+package basic.class11_binaryTree;
 
 /**
  * 判断两棵树结构相同

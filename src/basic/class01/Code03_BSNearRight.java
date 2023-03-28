@@ -1,4 +1,4 @@
-package primary.class03;
+package basic.class01;
 
 import java.util.EmptyStackException;
 

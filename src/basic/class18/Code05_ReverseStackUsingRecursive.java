@@ -11,15 +11,15 @@ public class Code05_ReverseStackUsingRecursive {
 		if (stack.isEmpty()) {
 			return;
 		}
-		int i = f(stack);
+		int bottom = f(stack);
 		reverse(stack);
-		stack.push(i);
+		// 栈中元素都取完后，然后再放进去，放和取的顺序相反
+		stack.push(bottom);
 	}
 
-	// 栈底元素移除掉
-	// 上面的元素盖下来
-	// 返回移除掉的栈底元素
+	// 递归移除栈底元素并返回，其他元素顺序不变
 	public static int f(Stack<Integer> stack) {
+		// 用一个变量保存栈顶元素，栈还有元素就递归在另一个方法中用一个变量保存栈顶元素，直到到栈底
 		int result = stack.pop();
 		if (stack.isEmpty()) {
 			return result;

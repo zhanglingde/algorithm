@@ -31,12 +31,13 @@ public class Code03_PrintAllSubsquences {
 			ans.add(path);
 			return;
 		}
-		// 没有要index位置的字符
+		// 没有要 index 位置的字符
 		process1(str, index + 1, ans, path);
-		// 要了index位置的字符
+		// 要了 index 位置的字符
 		process1(str, index + 1, ans, path + String.valueOf(str[index]));
 	}
 
+	// 子序列元素不重复
 	public static List<String> subsNoRepeat(String s) {
 		char[] str = s.toCharArray();
 		String path = "";

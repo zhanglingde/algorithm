@@ -6,12 +6,13 @@ import java.util.Stack;
 /**
  * 汉诺塔问题
  */
-public class Code02_Hanoi {
+public class Code02_HanoiTower {
 
 	public static void hanoi1(int n) {
 		leftToRight(n);
 	}
 
+	// ==================== 非递归实现 ======================
 	// 请把1~N层圆盘 从左 -> 右
 	public static void leftToRight(int n) {
 		if (n == 1) { // base case
@@ -74,9 +75,10 @@ public class Code02_Hanoi {
 		midToLeft(n - 1);
 	}
 
+	// 递归方式实现
 	public static void hanoi2(int n) {
 		if (n > 0) {
-			func(n, "left", "right", "mid");
+			move(n, "left", "right", "mid");
 		}
 	}
 
@@ -88,25 +90,25 @@ public class Code02_Hanoi {
      * @param to
      * @param other
      */
-	public static void func(int N, String from, String to, String other) {
+	public static void move(int N, String from, String to, String other) {
 		if (N == 1) { // base
 			System.out.println("Move 1 from " + from + " to " + to);
 		} else {
-			func(N - 1, from, other, to);
+			move(N - 1, from, other, to);
 			System.out.println("Move " + N + " from " + from + " to " + to);
-			func(N - 1, other, to, from);
+			move(N - 1, other, to, from);
 		}
 	}
 
 	public static class Record {
-		public boolean finish1;
+		public boolean finish;
 		public int base;
 		public String from;
 		public String to;
 		public String other;
 
 		public Record(boolean f1, int b, String f, String t, String o) {
-			finish1 = false;
+			finish = false;
 			base = b;
 			from = f;
 			to = t;
@@ -130,10 +132,10 @@ public class Code02_Hanoi {
 			if (cur.base == 1) {
 				System.out.println("Move 1 from " + cur.from + " to " + cur.to);
 				if (!stack.isEmpty()) {
-					stack.peek().finish1 = true;
+					stack.peek().finish = true;
 				}
 			} else {
-				if (!cur.finish1) {
+				if (!cur.finish) {
 					stack.push(cur);
 					stack.push(new Record(false, cur.base - 1, cur.from, cur.other, cur.to));
 				} else {

@@ -2,6 +2,7 @@ import basic.class04.Code03_CountSort;
 import basic.class04.Code04_RadixSort;
 import basic.class02.*;
 import basic.class10.*;
+import basic.class18.Code02_HanoiTower;
 
 public class Readme {
 
@@ -16,7 +17,7 @@ public class Readme {
      *      <li> 堆排序 {@link basic.class04.Code03_HeapSort} </li>
      *      <li> 计数排序 {@link Code03_CountSort} </li>
      *      <li> 基数排序 {@link Code04_RadixSort} </li>
-     *      <li> 二分法 {@link basic.class01.BSExist} {@link primary.class03.Code01_BSExist}</li>
+     *      <li> 二分法 {@link basic.class01.BSExist} </li>
      * </ol>
      */
     void sort() {}
@@ -45,11 +46,17 @@ public class Readme {
      * 二叉树
      *
      * <ol>
-     *      <li> 遍历二查叉树 {@link basic.class11.Code01_TraversalBinaryTree} </li>
-     *      <li> 非递归方式遍历二叉树 {@link basic.class11.Code01_UnRecursiveTraversalBT} </li>
-     *      <li> 判断两棵树结构相同 {@link basic.class11.Code02_SameTree} </li>
-     *      <li> 计算二叉树最大深度 {@link basic.class11.Code04_MaxDepthOfBinaryTree} </li>
-     *      <li> 知道一棵二叉树的先序遍历和中序遍历，且先序遍历和中序遍历中没有重复值 {@link basic.class11.Code05_ConstructBinaryTreeFromPreorderAndInorderTraversal} </li>
+     *      <li> 遍历二查叉树 {@link basic.class11_binaryTree.Code01_TraversalBinaryTree} </li>
+     *      <li> 非递归方式遍历二叉树 {@link basic.class11_binaryTree.Code01_UnRecursiveTraversalBT} </li>
+     *      <li> 判断两棵树结构相同 {@link basic.class11_binaryTree.Code02_SameTree} </li>
+     *      <li> N 叉树序列化成二叉树 {@link basic.class11_binaryTree.Code03_EncodeNaryTreeToBinaryTree} </li>
+     *      <li> 打印二叉树 {@link basic.class11_binaryTree.Code04_PrintBinaryTree} </li>
+     *      <li> 计算二叉树最大深度 {@link basic.class11_binaryTree.Code04_MaxDepthOfBinaryTree} </li>
+     *      <li> 计算二叉树最大宽度 {@link basic.class11_binaryTree.Code05_TreeMaxWidth} </li>
+     *      <li> 知道一棵二叉树的先序遍历和中序遍历，且先序遍历和中序遍历中没有重复值 {@link basic.class11_binaryTree.Code05_ConstructBinaryTreeFromPreorderAndInorderTraversal} </li>
+     *      <li> 序列化和反序列化二叉树 {@link basic.class11_binaryTree.Code6_SerializeAndReconstructTree} </li>
+     *      <li> 给定二叉树中的某个节点 x，返回该节点的后继节点  {@link basic.class11_binaryTree.Code06_SuccessorNode} </li>
+     *      <li> 纸条折叠  {@link basic.class11_binaryTree.Code07_PaperFolding} </li>
      * </ol>
      *
      */
@@ -71,7 +78,7 @@ public class Readme {
      * 递归
      *
      * <ol>
-     *     <li> 汉诺塔问题 {@link basic.class18.Code02_Hanoi} </li>
+     *     <li> 汉诺塔问题 {@link Code02_HanoiTower} </li>
      *     <li> 打印一个字符串的全部子序列 {@link basic.class18.Code03_PrintAllSubsquences} </li>
      *     <li> 打印一个字符串的全部排列 {@link basic.class18.Code04_PrintAllPermutations} </li>
      *     <li> 不申请额外的数据结构，逆序这个栈 {@link basic.class18.Code05_ReverseStackUsingRecursive} </li>

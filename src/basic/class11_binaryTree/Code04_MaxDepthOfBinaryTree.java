@@ -1,9 +1,10 @@
-package basic.class11;
+package basic.class11_binaryTree;
 
 /**
  * 计算二叉树最大深度
  * @author zhangling  2021/9/7 22:41
  */
+// 测试链接：https://leetcode.com/problems/maximum-depth-of-binary-tree
 public class Code04_MaxDepthOfBinaryTree {
     public static class TreeNode {
         int value;

@@ -3,7 +3,7 @@ package basic.class10;
 import java.util.HashMap;
 
 /**
- * Ramdon 指针链表复制
+ * Ramdom 指针链表复制
  * @author zhangling  2021/9/5 15:40
  */
 public class Code04_CopyListWithRandom {

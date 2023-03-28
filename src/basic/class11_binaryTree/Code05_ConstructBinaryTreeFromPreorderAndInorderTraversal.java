@@ -1,4 +1,4 @@
-package basic.class11;
+package basic.class11_binaryTree;
 
 /**
  * 知道一棵二叉树的先序遍历和中序遍历，且先序遍历和中序遍历中没有重复值

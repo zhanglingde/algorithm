@@ -1,5 +1,6 @@
 package basic.class17;
 
+// 边对象的描述
 public class Edge {
 	public int weight;
 	public Node from;

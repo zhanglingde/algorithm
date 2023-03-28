@@ -1,4 +1,4 @@
-package basic.class11;
+package basic.class11_binaryTree;
 
 // 遍历二查叉树
 public class Code01_TraversalBinaryTree {

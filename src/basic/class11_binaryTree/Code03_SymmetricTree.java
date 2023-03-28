@@ -1,7 +1,5 @@
-package basic.class11;
+package basic.class11_binaryTree;
 
-
-import java.time.chrono.ThaiBuddhistEra;
 
 /**
  * 判断一棵树是否是镜面树

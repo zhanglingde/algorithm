@@ -1,4 +1,4 @@
-package basic.class16;
+package basic.class16_unionFind;
 
 import java.util.*;
 

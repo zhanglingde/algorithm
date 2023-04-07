@@ -38,9 +38,12 @@ public class Code02_ConvertToLetterString {
         return ways;
     }
 
-    // 从右往左的动态规划
-    // 就是上面方法的动态规划版本
-    // dp[i]表示：str[i...]有多少种转化方式
+    /**
+     * 从右往左的动态规划（就是上面方法的动态规划版本）
+     * dp[i] 表示：str[i...] 有多少种转化方式
+     * @param s
+     * @return
+     */
     public static int dp1(String s) {
         if (s == null || s.length() == 0) {
             return 0;
@@ -49,9 +52,12 @@ public class Code02_ConvertToLetterString {
         int N = str.length;
         int[] dp = new int[N + 1];
         dp[N] = 1;
+        // 1. 从右往左填充 dp 一维表
         for (int i = N - 1; i >= 0; i--) {
+            // index 位置等于 0，就继续向左，尝试两位字符组合
             if (str[i] != '0') {
                 int ways = dp[i + 1];
+                // 判断两个字符是否可转换  10 ~ 26
                 if (i + 1 < str.length && (str[i] - '0') * 10 + str[i + 1] - '0' < 27) {
                     ways += dp[i + 2];
                 }
@@ -61,8 +67,12 @@ public class Code02_ConvertToLetterString {
         return dp[0];
     }
 
-    // 从左往右的动态规划
-    // dp[i]表示：str[0...i]有多少种转化方式
+    /**
+     * 从左往右的动态规划
+     * dp[i] 表示：str[0...i] 有多少种转化方式
+     * @param s
+     * @return
+     */
     public static int dp2(String s) {
         if (s == null || s.length() == 0) {
             return 0;

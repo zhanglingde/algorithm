@@ -63,7 +63,7 @@ public class Readme {
     void binaryTree(){}
 
     /**
-     * 并查集 {@link basic.class16.Code05_UnionFind}
+     * 并查集 {@link basic.class16_unionFind.Code05_UnionFind}
      */
     void union(){}
 
@@ -103,7 +103,11 @@ public class Readme {
      *     <li> 象棋中马跳到目标位置 {@link basic.class21.Code02_HorseJump} </li>
      *     <li> 洗咖啡机问题 {@link basic.class21.Code03_Coffee} </li>
      *
-     *     <li> 最短路径问题 {@link basic.class21.Code03_Coffee} </li>
+     *     <li> 最短路径问题 {@link basic.class22.Code01_MinPathSum} </li>
+     *     <li> 货币数组 {@link basic.class22.Code02_CoinsWayEveryPaperDifferent} </li>
+     *     <li> 面值数组 {@link basic.class22.Code03_CoinsWayNoLimit} </li>
+     *     <li> 面值数组 {@link basic.class22.Code04_CoinsWaySameValueSamePapper} </li>
+     *     <li> 棋盘存活率 {@link basic.class22.Code05_BobDie} </li>
      *
      * </ol>
      */

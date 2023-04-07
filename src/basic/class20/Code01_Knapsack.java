@@ -17,8 +17,14 @@ public class Code01_Knapsack {
         return process(w, v, 0, bag);
     }
 
-    // index 0~N
-    // rest 负~bag
+    /**
+     *
+     * @param w 重量数组
+     * @param v 价值数组
+     * @param index 当前索引
+     * @param rest 背包还剩多少容量
+     * @return 背包能装的最大价值
+     */
     public static int process(int[] w, int[] v, int index, int rest) {
         if (rest < 0) {
             return -1;
@@ -35,13 +41,23 @@ public class Code01_Knapsack {
         return Math.max(p1, p2);
     }
 
+    /**
+     * 背包问题动态规划
+     *
+     * @param w 重量数组
+     * @param v 价值数组
+     * @param bag 背包容量
+     * @return 背包能装的货物最大价值
+     */
     public static int dp(int[] w, int[] v, int bag) {
         if (w == null || v == null || w.length != v.length || w.length == 0) {
             return 0;
         }
         int N = w.length;
         int[][] dp = new int[N + 1][bag + 1];
+        // 1. 从最后一行开始往上填 dp 表
         for (int index = N - 1; index >= 0; index--) {
+            // 2. 从左往右填 dp 表（）
             for (int rest = 0; rest <= bag; rest++) {
                 int p1 = dp[index + 1][rest];
                 int p2 = 0;

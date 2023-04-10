@@ -91,8 +91,8 @@ public class Readme {
      * 动态规划 class19-class26
      *
      * <ol>
-     *     <li> 机器人问题  {@link basic.class19.Code01_RobotWalk} </li>
-     *     <li> 取分数最大问题 {@link basic.class19.Code02_CardsInLine} </li>
+     *     <li> 机器人问题  {@link basic.class19_dp.Code01_RobotWalk} </li>
+     *     <li> 取分数最大问题 {@link basic.class19_dp.Code02_CardsInLine} </li>
      *
      *     <li> 背包问题 {@link basic.class20.Code01_Knapsack} </li>
      *     <li> 数字字符串转换为字符 {@link basic.class20.Code02_ConvertToLetterString} </li>
@@ -109,6 +109,13 @@ public class Readme {
      *     <li> 面值数组 {@link basic.class22.Code04_CoinsWaySameValueSamePapper} </li>
      *     <li> 棋盘存活率 {@link basic.class22.Code05_BobDie} </li>
      *
+     *     <li> 怪兽死亡率 {@link basic.class23.Code01_KillMonster} </li>
+     *     <li> 组成目标货币面值所需货币数 {@link basic.class23.Code02_MinCoinsNoLimit} </li>
+     *     <li> 正数拆分 {@link basic.class23.Code03_SplitNumber} </li>
+     *
+     *     <li> 改背包问题 {@link basic.class24.Code01_SplitSumClosed} </li>
+     *     <li> 拆分数组2 {@link basic.class24.Code02_SplitSumClosedSizeHalf} </li>
+     *     <li> N 皇后问题 {@link basic.class24.Code03_NQueens} </li>
      * </ol>
      */
     void test(){}

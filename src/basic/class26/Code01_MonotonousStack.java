@@ -12,20 +12,28 @@ import java.util.Stack;
  */
 public class Code01_MonotonousStack {
 
-    // arr = [ 3, 1, 2, 3]
-    //         0  1  2  3
-    //  [
-    //     0 : [-1,  1]
-    //     1 : [-1, -1]
-    //     2 : [ 1, -1]
-    //     3 : [ 2, -1]
-    //  ]
+    /**
+     * 获取数组 i 位置左右两边离 i 最近且小于 arr[i] 位置的值
+     *
+     * arr = [ 3, 1, 2, 3]
+     *         0  1  2  3
+     *  [
+     *     0 : [-1,  1]
+     *     1 : [-1, -1]
+     *     2 : [ 1, -1]
+     *     3 : [ 2, -1]
+     *  ]
+     *
+     * @param arr
+     * @return
+     */
     public static int[][] getNearLessNoRepeat(int[] arr) {
         int[][] res = new int[arr.length][2];
         // 只存位置！
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < arr.length; i++) { // 当遍历到i位置的数，arr[i]
             while (!stack.isEmpty() && arr[stack.peek()] > arr[i]) {
+                // 栈中元素不是小于 i 位置，栈中元素弹出，
                 int j = stack.pop();
                 int leftLessIndex = stack.isEmpty() ? -1 : stack.peek();
                 res[j][0] = leftLessIndex;

@@ -3,7 +3,7 @@ package basic.class25;
 import java.util.LinkedList;
 
 /**
- * 假设一个固定大小为W的窗口，依次划过arr，
+ * 假设一个固定大小为 W 的窗口，依次划过arr，
  * 返回每一次滑出状况的最大值
  * 例如，arr = [4,3,5,4,3,3,6,7], W = 3
  * 返回：[5,5,5,4,6,7]
@@ -20,12 +20,13 @@ public class Code01_SlidingWindowMaxArray {
         int index = 0;
         int L = 0;
         int R = w - 1;
-        while (R < N) {
+        while (R < N) { // Right 指针超过数组长度，退出循环
+            // 循环窗口，找出窗口内最大值
             int max = arr[L];
             for (int i = L + 1; i <= R; i++) {
                 max = Math.max(max, arr[i]);
-
             }
+            // 窗口右移，最大值赋值给窗口最左边的值
             res[index++] = max;
             L++;
             R++;
@@ -34,29 +35,33 @@ public class Code01_SlidingWindowMaxArray {
     }
 
     /**
-     * @param arr
+     * 获取一次滑动窗口内的最大值数组
+     *
+     * @param arr 数组
      * @param w   窗口中数据的量
-     * @return
+     * @return 返回每个窗口中的最大值数组
      */
     public static int[] getMaxWindow(int[] arr, int w) {
         if (arr == null || w < 1 || arr.length < w) {
             return null;
         }
-        // qmax 窗口最大值的更新结构
-        // 放下标
-        LinkedList<Integer> qmax = new LinkedList<Integer>();
+        // qMax 窗口最大值的更新结构（放下标）
+        LinkedList<Integer> qMax = new LinkedList<Integer>();
         int[] res = new int[arr.length - w + 1];
         int index = 0;
         for (int R = 0; R < arr.length; R++) {
-            while (!qmax.isEmpty() && arr[qmax.peekLast()] <= arr[R]) {
-                qmax.pollLast();
+            while (!qMax.isEmpty() && arr[qMax.peekLast()] <= arr[R]) {
+                // 对列中元素不是窗口最大值，移除队列中元素
+                qMax.pollLast();
             }
-            qmax.addLast(R);
-            if (qmax.peekFirst() == R - w) {
-                qmax.pollFirst();
+            qMax.addLast(R);
+            // 超过窗口，左边指针右移
+            if (qMax.peekFirst() == R - w) {
+                qMax.pollFirst();
             }
+            // 窗口右移，最大值赋值给窗口最左边的值
             if (R >= w - 1) {
-                res[index++] = arr[qmax.peekFirst()];
+                res[index++] = arr[qMax.peekFirst()];
             }
         }
         return res;

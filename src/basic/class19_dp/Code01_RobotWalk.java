@@ -1,4 +1,4 @@
-package basic.class19;
+package basic.class19_dp;
 
 
 /**
@@ -28,11 +28,14 @@ public class Code01_RobotWalk {
         return process1(start, K, aim, N);
     }
 
-    // 机器人当前来到的位置是cur，
-    // 机器人还有rest步需要去走，
-    // 最终的目标是aim，
-    // 有哪些位置？1~N
-    // 返回：机器人从cur出发，走过rest步之后，最终停在aim的方法数，是多少？
+    /**
+     *
+     * @param cur 当前位置
+     * @param rest 还剩几步
+     * @param aim 目标位置
+     * @param N 总有位置数 1~N
+     * @return 返回 机器人从 cur 出发，走过rest步之后，最终停在aim的方法数，是多少？
+     */
     public static int process1(int cur, int rest, int aim, int N) {
         if (rest == 0) { // 如果已经不需要走了，走完了！
             return cur == aim ? 1 : 0;
@@ -53,9 +56,9 @@ public class Code01_RobotWalk {
      * 在暴力递归中添加 dp 二维表，相当于缓存，有重复步骤时直接从 dp 中取（从顶向下的动态规划（记忆搜索））
      *
      * @param N
-     * @param start
-     * @param aim
-     * @param K
+     * @param start 开始位置
+     * @param aim 目标位置
+     * @param K 走 K 步
      * @return
      */
     public static int ways2(int N, int start, int aim, int K) {
@@ -63,12 +66,13 @@ public class Code01_RobotWalk {
             return -1;
         }
         int[][] dp = new int[N + 1][K + 1];
+        // 1. 设置默认值 -1，当递归的时候是 -1 就进行计算，如果不是 -1 之前计算过，就不再递归
         for (int i = 0; i <= N; i++) {
             for (int j = 0; j <= K; j++) {
                 dp[i][j] = -1;
             }
         }
-        // dp就是缓存表
+        // 2. 递归计算 dp 缓存表
         // dp[cur][rest] == -1 -> process1(cur, rest)之前没算过！
         // dp[cur][rest] != -1 -> process1(cur, rest)之前算过！返回值，dp[cur][rest]
         // N+1 * K+1
@@ -78,10 +82,11 @@ public class Code01_RobotWalk {
     // cur 范: 1 ~ N
     // rest 范：0 ~ K
     public static int process2(int cur, int rest, int aim, int N, int[][] dp) {
+        // 1. 如果已经递归计算过，直接返回缓存表中计算过的结果
         if (dp[cur][rest] != -1) {
             return dp[cur][rest];
         }
-        // 之前没算过！
+        // 2. 之前没计算过，递归计算结果，最后结果保存到 dp 表中
         int ans = 0;
         if (rest == 0) {
             ans = cur == aim ? 1 : 0;
@@ -101,9 +106,9 @@ public class Code01_RobotWalk {
      * 动态规划，直接计算 dp 结果
      *
      * @param N
-     * @param start
-     * @param aim
-     * @param K
+     * @param start 开始位置
+     * @param aim 目标位置
+     * @param K 还剩 k 步
      * @return
      */
     public static int ways3(int N, int start, int aim, int K) {

@@ -15,7 +15,15 @@ public class Code05_BobDie {
         return (double) process(row, col, k, N, M) / Math.pow(4, k);
     }
 
-    // 目前在row，col位置，还有rest步要走，走完了如果还在棋盘中就获得1个生存点，返回总的生存点数
+    /**
+     * 目前在row，col位置，还有rest步要走，走完了如果还在棋盘中就获得1个生存点，返回总的生存点数
+     * @param row 开始位置（row,col）
+     * @param col
+     * @param rest 还剩 rest 步要走
+     * @param N 目标位置（N,M）
+     * @param M
+     * @return 总的生存点数
+     */
     public static long process(int row, int col, int rest, int N, int M) {
         if (row < 0 || row == N || col < 0 || col == M) {
             return 0;
@@ -32,13 +40,17 @@ public class Code05_BobDie {
         return up + down + left + right;
     }
 
+    // ===========动态规划=======================
+
     public static double livePosibility2(int row, int col, int k, int N, int M) {
         long[][][] dp = new long[N][M][k + 1];
+        // 1. dp 缓存表默认设置为 1，只要还在棋盘中就是一种存活的情况
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
                 dp[i][j][0] = 1;
             }
         }
+        // 2. 计算缓存表 dp，dp 表示在某个位置还剩多少步到 目标位置的存活率
         for (int rest = 1; rest <= k; rest++) {
             for (int r = 0; r < N; r++) {
                 for (int c = 0; c < M; c++) {
@@ -49,10 +61,12 @@ public class Code05_BobDie {
                 }
             }
         }
+        // 3. 存活情况数 / 总情况数 4^k
         return (double) dp[row][col][k] / Math.pow(4, k);
     }
 
     public static long pick(long[][][] dp, int N, int M, int r, int c, int rest) {
+        // 不在棋盘中返回 0
         if (r < 0 || r == N || c < 0 || c == M) {
             return 0;
         }

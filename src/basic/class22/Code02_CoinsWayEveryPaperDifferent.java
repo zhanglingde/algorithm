@@ -36,6 +36,8 @@ public class Code02_CoinsWayEveryPaperDifferent {
         }
     }
 
+    // ================= 动态规划 ========================
+
     public static int dp(int[] arr, int aim) {
         if (aim == 0) {
             return 1;
@@ -43,8 +45,11 @@ public class Code02_CoinsWayEveryPaperDifferent {
         int N = arr.length;
         int[][] dp = new int[N + 1][aim + 1];
         dp[N][0] = 1;
+        // 1. 从下往上填
         for (int index = N - 1; index >= 0; index--) {
+            // 从左往右填
             for (int rest = 0; rest <= aim; rest++) {
+                // 依赖下一行 index + 1 （rest - arr[index] < 0,为负数则无效）
                 dp[index][rest] = dp[index + 1][rest] + (rest - arr[index] >= 0 ? dp[index + 1][rest - arr[index]] : 0);
             }
         }

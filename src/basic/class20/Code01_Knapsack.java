@@ -32,8 +32,10 @@ public class Code01_Knapsack {
         if (index == w.length) {
             return 0;
         }
+        // 不要当前货物
         int p1 = process(w, v, index + 1, rest);
         int p2 = 0;
+        // 要当前货物
         int next = process(w, v, index + 1, rest - w[index]);
         if (next != -1) {
             p2 = v[index] + next;
@@ -42,7 +44,7 @@ public class Code01_Knapsack {
     }
 
     /**
-     * 背包问题动态规划
+     * 背包问题动态规划（两个变量 w、v）
      *
      * @param w 重量数组
      * @param v 价值数组
@@ -55,12 +57,13 @@ public class Code01_Knapsack {
         }
         int N = w.length;
         int[][] dp = new int[N + 1][bag + 1];
-        // 1. 从最后一行开始往上填 dp 表
+        // 1. 从最后一行开始往上填 dp 表（index: 0~N）(第 N 行都为 0，不用填)
         for (int index = N - 1; index >= 0; index--) {
             // 2. 从左往右填 dp 表（）
             for (int rest = 0; rest <= bag; rest++) {
                 int p1 = dp[index + 1][rest];
                 int p2 = 0;
+                // dp 表没有负数，rest - w[index] < 0 时设置 -1 为无效解
                 int next = rest - w[index] < 0 ? -1 : dp[index + 1][rest - w[index]];
                 if (next != -1) {
                     p2 = v[index] + next;

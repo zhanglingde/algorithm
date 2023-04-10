@@ -10,11 +10,13 @@ public class Code03_NQueens {
         return process1(0, record, n);
     }
 
-    // 当前来到i行，一共是0~N-1行
-    // 在i行上放皇后，所有列都尝试
-    // 必须要保证跟之前所有的皇后不打架
-    // int[] record record[x] = y 之前的第x行的皇后，放在了y列上
-    // 返回：不关心i以上发生了什么，i.... 后续有多少合法的方法数
+    /**
+     * 在 i 行上放皇后，所有列都尝试；必须要保证跟之前所有的皇后不打架
+     * @param i  当前来到i行，一共是0~N-1行
+     * @param record int[] record record[x] = y 之前的第x行的皇后，放在了y列上
+     * @param n N 个皇后
+     * @return 返回：不关心i以上发生了什么，i.... 后续有多少合法的方法数
+     */
     public static int process1(int i, int[] record, int n) {
         if (i == n) {
             return 1;
@@ -40,12 +42,14 @@ public class Code03_NQueens {
         return true;
     }
 
-    // 请不要超过32皇后问题
+    // =========================================================
+
+    // 请不要超过 32 皇后问题
     public static int num2(int n) {
         if (n < 1 || n > 32) {
             return 0;
         }
-        // 如果你是13皇后问题，limit 最右13个1，其他都是0
+        // 如果你是 13 皇后问题，limit 最右 13 个 1，其他都是0
         int limit = n == 32 ? -1 : (1 << n) - 1;
         return process2(limit, 0, 0, 0);
     }

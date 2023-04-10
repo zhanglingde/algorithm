@@ -13,23 +13,34 @@ public class Code02_MinCoinsNoLimit {
         return process(arr, 0, aim);
     }
 
-    // arr[index...]面值，每种面值张数自由选择，
-    // 搞出rest正好这么多钱，返回最小张数
-    // 拿Integer.MAX_VALUE标记怎么都搞定不了
+    /**
+     * 组成目标面值需要的最小面值张数
+     *
+     * @param arr 面值数组，每张面值数无限
+     * @param index 索引
+     * @param rest 目标面值
+     * @return 返回需要面值的最小张数
+     */
     public static int process(int[] arr, int index, int rest) {
         if (index == arr.length) {
+            // Integer.MAX_VALUE 标记无效值
             return rest == 0 ? 0 : Integer.MAX_VALUE;
         } else {
             int ans = Integer.MAX_VALUE;
+            // 1. 张数从 0 开始增加遍历
             for (int zhang = 0; zhang * arr[index] <= rest; zhang++) {
+                // 递归返回的不是 Integer.MAX_VALUE，说明是有效的（前面用了zhang 张，拼成了 zhang * arr[index] 面值，剩下的用了 next 张）
                 int next = process(arr, index + 1, rest - zhang * arr[index]);
                 if (next != Integer.MAX_VALUE) {
+                    // 后续的张数 + 当前使用的
                     ans = Math.min(ans, zhang + next);
                 }
             }
             return ans;
         }
     }
+
+    // =============== 动态规划 ============================
 
     public static int dp1(int[] arr, int aim) {
         if (aim == 0) {
@@ -38,14 +49,18 @@ public class Code02_MinCoinsNoLimit {
         int N = arr.length;
         int[][] dp = new int[N + 1][aim + 1];
         dp[N][0] = 0;
+        // 1. dp 表设置标记值 Integer.MAX_VALUE
         for (int j = 1; j <= aim; j++) {
             dp[N][j] = Integer.MAX_VALUE;
         }
+        // 2. 从最后一行往上填 dp 表
         for (int index = N - 1; index >= 0; index--) {
+            // 3. 从左往右填 dp 表
             for (int rest = 0; rest <= aim; rest++) {
                 int ans = Integer.MAX_VALUE;
-                // 有枚举行为的动态规划
+                // 有枚举行为的动态规划（存在循环）
                 for (int zhang = 0; zhang * arr[index] <= rest; zhang++) {
+
                     int next = dp[index + 1][rest - zhang * arr[index]];
                     if (next != Integer.MAX_VALUE) {
                         ans = Math.min(ans, zhang + next);
@@ -57,6 +72,8 @@ public class Code02_MinCoinsNoLimit {
         return dp[0][aim];
     }
 
+    // ==================== 动态规划2 ======================================
+
     public static int dp2(int[] arr, int aim) {
         if (aim == 0) {
             return 0;
@@ -64,11 +81,15 @@ public class Code02_MinCoinsNoLimit {
         int N = arr.length;
         int[][] dp = new int[N + 1][aim + 1];
         dp[N][0] = 0;
+        // 1. dp 表设置标记值 Integer.MAX_VALUE
         for (int j = 1; j <= aim; j++) {
             dp[N][j] = Integer.MAX_VALUE;
         }
+        // 2. 从最后一行往上填 dp 表
         for (int index = N - 1; index >= 0; index--) {
+            // 3. 从左往右填 dp 表
             for (int rest = 0; rest <= aim; rest++) {
+                // 优化枚举行为
                 dp[index][rest] = dp[index + 1][rest];
                 if (rest - arr[index] >= 0
                         && dp[index][rest - arr[index]] != Integer.MAX_VALUE) {

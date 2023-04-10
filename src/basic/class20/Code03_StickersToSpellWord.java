@@ -156,7 +156,7 @@ public class Code03_StickersToSpellWord {
     }
 
     /**
-     * 傻缓存
+     * 傻缓存（可变参数 t 范围变化太大，动态规划不需要变成严格表结构）
      *
      * @param stickers 贴纸词频数组
      * @param t        目标字符串

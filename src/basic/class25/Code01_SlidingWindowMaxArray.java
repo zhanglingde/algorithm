@@ -23,6 +23,7 @@ public class Code01_SlidingWindowMaxArray {
         while (R < N) { // Right 指针超过数组长度，退出循环
             // 循环窗口，找出窗口内最大值
             int max = arr[L];
+            // 遍历获取 W 窗口内最大值
             for (int i = L + 1; i <= R; i++) {
                 max = Math.max(max, arr[i]);
             }
@@ -33,6 +34,8 @@ public class Code01_SlidingWindowMaxArray {
         }
         return res;
     }
+
+    // ==================== 滑动窗口 ========================================
 
     /**
      * 获取一次滑动窗口内的最大值数组
@@ -45,21 +48,21 @@ public class Code01_SlidingWindowMaxArray {
         if (arr == null || w < 1 || arr.length < w) {
             return null;
         }
-        // qMax 窗口最大值的更新结构（放下标）
+        // 定义 qMax 窗口最大值的更新结构（放下标）
         LinkedList<Integer> qMax = new LinkedList<Integer>();
         int[] res = new int[arr.length - w + 1];
         int index = 0;
         for (int R = 0; R < arr.length; R++) {
+            // 1. 窗口右移，当遍历到的值有比窗口内的值大时，窗口内所有值都出队列，最大值入队列
             while (!qMax.isEmpty() && arr[qMax.peekLast()] <= arr[R]) {
-                // 对列中元素不是窗口最大值，移除队列中元素
                 qMax.pollLast();
             }
             qMax.addLast(R);
-            // 超过窗口，左边指针右移
+            // 2. 窗口右移导致左边不在窗口内，则左边的数出窗口，移出队列（超出窗口，左边指针右移）
             if (qMax.peekFirst() == R - w) {
                 qMax.pollFirst();
             }
-            // 窗口右移，最大值赋值给窗口最左边的值
+            // 3. 保存窗口内最大值
             if (R >= w - 1) {
                 res[index++] = arr[qMax.peekFirst()];
             }

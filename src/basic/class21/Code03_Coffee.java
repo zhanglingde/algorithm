@@ -24,7 +24,18 @@ public class Code03_Coffee {
         return forceMake(arr, times, 0, drink, n, a, b);
     }
 
-    // 每个人暴力尝试用每一个咖啡机给自己做咖啡
+    /**
+     * 每个人暴力尝试用每一个咖啡机给自己做咖啡
+     *
+     * @param arr 每一个咖啡机冲一杯咖啡的时间
+     * @param times
+     * @param kth
+     * @param drink
+     * @param n n 个人
+     * @param a 机器洗完一个杯子的时间
+     * @param b 杯子自然挥发干净的时间
+     * @return 返回所有人喝完咖啡并洗完咖啡杯的全部过程结束后，至少来到什么时间点
+     */
     public static int forceMake(int[] arr, int[] times, int kth, int[] drink, int n, int a, int b) {
         if (kth == n) {
             int[] drinkSorted = Arrays.copyOf(drink, kth);

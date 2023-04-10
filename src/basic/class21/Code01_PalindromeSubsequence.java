@@ -24,23 +24,26 @@ public class Code01_PalindromeSubsequence {
         return f(str, 0, str.length - 1);
     }
 
-    // str[L..R]最长回文子序列长度返回
+    // str[L..R] 最长回文子序列长度返回
     public static int f(char[] str, int L, int R) {
         if (L == R) {
             return 1;
         }
-        if (L == R - 1) {
+        if (L == R - 1) { // 偶数
             return str[L] == str[R] ? 2 : 1;
         }
-        // 不以 L 开头，和 R 结尾
+        // 1. 不以 L 开头，不以 R 结尾（情况 2、3 范围包括了情况 1 ）
         int p1 = f(str, L + 1, R - 1);
-        // L 开头，不以 R 结尾
+        // 2. 以 L 开头，不以 R 结尾
         int p2 = f(str, L, R - 1);
+        // 3. 不以 L 开头，以 R 结尾
         int p3 = f(str, L + 1, R);
-        // 以 L 开头和 R 结尾，必须 L，R位置的值相等
+        // 4. 以 L 开头，以 R 结尾（必须 L、R 位置的值相等）
         int p4 = str[L] != str[R] ? 0 : (2 + f(str, L + 1, R - 1));
         return Math.max(Math.max(p1, p2), Math.max(p3, p4));
     }
+
+    // ==================== 动态规划 ==================================
 
     /**
      * 动态规划
@@ -55,14 +58,21 @@ public class Code01_PalindromeSubsequence {
         char[] str = s.toCharArray();
         int N = str.length;
         int[][] dp = new int[N][N];
-        dp[N - 1][N - 1] = 1;
+        dp[N - 1][N - 1] = 1; // 该位置填充 1 是为了方便下面一个循环就可以填充 dp[i][i] 和 dp[i][i+1] 位置的值
+        // 1. 填充字符串长度为 1 或 2 时的 dp 表的值（对角线填充及...）
         for (int i = 0; i < N - 1; i++) {
+            // 字符串长度为 1，最长回文子序列的长度就是 1
             dp[i][i] = 1;
+            // 如果首尾相同，
             dp[i][i + 1] = str[i] == str[i + 1] ? 2 : 1;
         }
+        // 2. 从下往上填
         for (int L = N - 3; L >= 0; L--) {
+            // 从左往右填
             for (int R = L + 2; R < N; R++) {
+                // 情况 2）3） 中取最大的（依赖 dp 表左边，下边两个格子）
                 dp[L][R] = Math.max(dp[L][R - 1], dp[L + 1][R]);
+                // str[L] == str[R] 时满足情况 4），取三个位置最大的（左边，下边，左下三个格子取最大的）
                 if (str[L] == str[R]) {
                     dp[L][R] = Math.max(dp[L][R], 2 + dp[L + 1][R - 1]);
                 }

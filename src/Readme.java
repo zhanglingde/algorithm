@@ -148,9 +148,17 @@ public class Readme {
     void manacher(){}
 
     /**
-     * bfprt 算法，蓄水池算法
+     * bfprt 算法
+     *
+     * 在无序数组中求第 K 小的数 {@link basic.class30.Code01_FindMinKth}
+     * 给定一个无序数组 arr 中，长度为 N，给定一个正数 k，返回 top k 个最大的数 {@link basic.class30.Code02_MaxTopK}
      */
     void bfprt(){}
+
+    /**
+     * 蓄水池算法 {@link basic.class30.Code03_ReservoirSampling}
+     */
+    void reservoirSampling(){}
 
     /**
      * Morris 遍历  {@link basic.class31.Code01_MorrisTraversal}

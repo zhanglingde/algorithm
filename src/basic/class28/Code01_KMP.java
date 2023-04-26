@@ -6,12 +6,18 @@ package basic.class28;
  */
 public class Code01_KMP {
 
-    public static int getIndexOf(String s1, String s2) {
-        if (s1 == null || s2 == null || s2.length() < 1 || s1.length() < s2.length()) {
+    /**
+     *
+     * @param match 匹配的字符串
+     * @param str 原字符串
+     * @return
+     */
+    public static int getIndexOf(String match, String str) {
+        if (match == null || str == null || str.length() < 1 || match.length() < str.length()) {
             return -1;
         }
-        char[] str1 = s1.toCharArray();
-        char[] str2 = s2.toCharArray();
+        char[] str1 = match.toCharArray();
+        char[] str2 = str.toCharArray();
         int x = 0;
         int y = 0;
         // O(M) m <= n
@@ -32,8 +38,8 @@ public class Code01_KMP {
     }
 
     /**
-     * 求 str2 的 next 数组
-     * next 数组包含每一个字符位置的前面字符串的 最长 前缀字符串和后缀字符串相等的长度
+     * 求大字符串的 next 数组
+     * next 数组包含每一个字符位置的前面字符串的 最长前缀字符串和后缀字符串相等的长度
      *
      * @param str2
      * @return
@@ -45,15 +51,15 @@ public class Code01_KMP {
         int[] next = new int[str2.length];
         next[0] = -1;   // 0 位置都定为 -1，表示不能往左跳
         next[1] = 0;
-        int i = 2; // 目前在哪个位置上求next数组的值
-        int cn = 0; // 当前是哪个位置的值再和i-1位置的字符比较
+        int i = 2; // 目前在哪个位置上求 next 数组的值
+        int cn = 0; // 当前是哪个位置的值再和 i-1 位置的字符比较
         while (i < next.length) {
             if (str2[i - 1] == str2[cn]) { // 配成功的时候
                 next[i++] = ++cn;
             } else if (cn > 0) {
                 cn = next[cn];
             } else {
-                next[i++] = 0;
+                next[i++] = 0;   // 未匹配到
             }
         }
         return next;
@@ -82,6 +88,8 @@ public class Code01_KMP {
             }
         }
         System.out.println("test finish");
+
+
     }
 
 }

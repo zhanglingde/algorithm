@@ -2,7 +2,7 @@ package basic.class11_binaryTree;
 
 // 遍历二查叉树
 public class Code01_TraversalBinaryTree {
-    public static class TreeNode{
+    public static class TreeNode {
         int value;
         TreeNode left;
         TreeNode right;
@@ -13,11 +13,11 @@ public class Code01_TraversalBinaryTree {
     }
 
     //    先序
-    public static void pre(TreeNode root){
+    public static void pre(TreeNode root) {
         if (root == null) {
             return;
         }
-        System.out.println(root.value);
+        System.out.print(root.value + " ");
         pre(root.left);
         pre(root.right);
     }
@@ -51,8 +51,8 @@ public class Code01_TraversalBinaryTree {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
 
-//        pre(root);
-//        in(root);
-        pos(root);
+        pre(root);
+        // in(root);
+        // pos(root);
     }
 }

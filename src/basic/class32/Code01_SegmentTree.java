@@ -10,11 +10,11 @@ package basic.class32;
 public class Code01_SegmentTree {
 
     public static class SegmentTree {
-        // arr[]为原序列的信息从0开始，但在arr里是从1开始的
-        // sum[]模拟线段树维护区间和
-        // lazy[]为累加和懒惰标记
-        // change[]为更新的值
-        // update[]为更新慵懒标记
+        // arr[] 为原序列的信息从0开始，但在arr里是从1开始的
+        // sum[] 模拟线段树维护区间和
+        // lazy[] 为累加和懒惰标记
+        // change[] 为更新的值
+        // update[] 为更新慵懒标记
         private int MAXN;
         private int[] arr;
         private int[] sum;
